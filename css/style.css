@@ -6,6 +6,25 @@
 /* *** ESTILOS GENERALES *** */
 /* *********************************** */
 
+/* ********************* */
+/* Tipografía */
+@font-face {
+  font-family: "Mayberry";
+  src: url("../font/MayberryW02Black.woff2") format("woff2"),
+    url("../font/MayberryW02Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Mayberry Regular";
+  src: url("../font/MayberryW02Regular.woff2") format("woff2"),
+    url("../font/MayberryW02Regular.woff") format("woff");
+}
+
+html {
+  font-family: "Mayberry Regular ", sans-serif;
+  font-size: 16px;
+}
+
 /* VARIABLES */
 /* ********************* */
 :root {
@@ -25,23 +44,45 @@
 
   /* Tamaños */
   --tam-anchoMax: 1640px;
-  
-
-}
-/* ********************* */
-
-/* Tipografía */
-@font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
 }
 
-/* ******************************** */
+header {
+  background-color: var(--color-azul-marino);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-/* Colores */
+  & nav {
+    width: 100%;
+    max-width: 1640px;
 
-/* ******************************** */
-html{
-  font-family: serif;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    & a {
+      text-decoration: none;
+      color: var(--color-blanco);
+      font-family: "Mayberry";
+      font-size: 12px;
+      padding: 0 20px;
+      text-transform: uppercase;
+    }
+
+    & .header__logo {
+      flex-grow: 1;
+
+      & .header__logo-img {
+        width: 50px;
+      }
+    }
+
+    & .header__empezar {
+      padding: 10px 40px;
+      border-radius: 20px;
+      background: var(--color-blanco);
+      color: var(--color_azul_marino);
+    }
+  }
 }
-
