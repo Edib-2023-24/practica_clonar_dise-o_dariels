@@ -6,6 +6,30 @@
 /* *** ESTILOS GENERALES *** */
 /* *********************************** */
 
+/* VARIABLES */
+/* ********************* */
+:root {
+  /* colores */
+  --color-azul-cielo: #1b287e;
+  --color-azul-claro: #5c2acf;
+  --color-azul-marino: #042665;
+  --color-blanco: #fefefc;
+  --color-lila: #c9b0ea;
+  --color-morado-claro: #a66ced;
+  --color-violeta: #b95ec3;
+
+  /* Tipografias */
+  --tipo-parrafo: 1rem;
+  --tipo-subtitulo: 1.5rem;
+  --tipo-links: 1.125rem;
+
+  /* Tamaños */
+  --tam-anchoMax: 1640px;
+  
+
+}
+/* ********************* */
+
 /* Tipografía */
 @font-face {
   font-family: "";
@@ -17,3 +41,7 @@
 /* Colores */
 
 /* ******************************** */
+html{
+  font-family: serif;
+}
+
