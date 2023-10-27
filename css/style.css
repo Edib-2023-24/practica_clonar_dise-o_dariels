@@ -19,6 +19,7 @@
   src: url("../font/MayberryW02Regular.woff2") format("woff2"),
     url("../font/MayberryW02Regular.woff") format("woff");
 }
+/* ********************* */
 
 html {
   font-family: "Mayberry Regular ", sans-serif;
@@ -46,16 +47,19 @@ html {
   --tam-anchoMax: 1640px;
 }
 
+/* Apartado del Encabezado */
 header {
   background-color: var(--color-azul-marino);
-  height: auto;
+  height: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  /* Apartado del menu de navegación */
   & nav {
     width: 100%;
     max-width: 1640px;
+    font-family: "Mayberry", sans-serif;
 
     display: flex;
     align-items: center;
@@ -70,6 +74,7 @@ header {
       text-transform: uppercase;
     }
 
+    /* Apartado del imagotipo */
     & .header__logo {
       flex-grow: 1;
 
@@ -78,11 +83,80 @@ header {
       }
     }
 
+    /* Aparatado del boton en el encabezado */
     & .header__empezar {
       padding: 10px 40px;
       border-radius: 20px;
       background: var(--color-blanco);
       color: var(--color_azul_marino);
+    }
+  }
+}
+
+/* Apartado del pie de pagina */
+footer {
+  width: 100%;
+  background: var(--color-azul-cielo);
+  position: fixed;
+  bottom: 0;
+
+  & section {
+    display: grid;
+    max-width: 1640px;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.7fr;
+    gap: 8px 20px;
+    margin: 0 auto;
+    color: var(--color-blanco);
+
+    /* Imagotipo */
+    & .header__logo {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Breve descripcion */
+    & p {
+      grid-row: 2/3;
+      padding-right: 250px;
+    }
+
+    /* Derechos de Autor */
+    & h6 {
+      grid-row: 3/4;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Los servicios */
+    & .footer__section-servicios {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      line-height: 40px;
+    }
+
+    /* Info. Contacto */
+    & .footer__section-soporte {
+      grid-column: 3/4;
+      grid-row: 2/3;
+      line-height: 40px;
+
+      & li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    /* Redes Sociales */
+    & .footer__section-redes {
+      grid-column: 4/5;
+      grid-row: 3/4;
+      display: flex;
+      align-items: end;
+      gap: 30px;
+      align-items: center;
     }
   }
 }
