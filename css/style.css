@@ -49,7 +49,12 @@ html {
 
 /* Apartado del Encabezado */
 header {
-  background-color: var(--color-azul-marino);
+  background: linear-gradient(
+    180deg,
+    var(--color-azul-marino) 0%,
+    var(--color-azul-claro) 52.6%,
+    var(--color-azul-claro) 100%
+  );
   height: 110px;
   display: flex;
   justify-content: center;
@@ -58,7 +63,7 @@ header {
   /* Apartado del menu de navegación */
   & nav {
     width: 100%;
-    max-width: 1640px;
+    max-width: var(--tam-anchoMax);
     font-family: "Mayberry", sans-serif;
 
     display: flex;
@@ -96,13 +101,17 @@ header {
 /* Apartado del pie de pagina */
 footer {
   width: 100%;
-  background: var(--color-azul-cielo);
+  background: linear-gradient(
+    0deg,
+    var(--color-azul-marino) -10.47%,
+    var(--color-morado-claro) 92.94%
+  );
   position: fixed;
   bottom: 0;
 
-  & section {
+  & .footer__section {
     display: grid;
-    max-width: 1640px;
+    max-width: var(--tam-anchoMax);
     display: grid;
     grid-template-columns: 3fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 0.7fr;
