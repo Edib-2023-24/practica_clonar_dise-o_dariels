@@ -49,16 +49,16 @@ html {
 
 /* Apartado del Encabezado */
 header {
-  background: linear-gradient(
-    180deg,
-    var(--color-azul-marino) 0%,
-    var(--color-azul-claro) 52.6%,
-    var(--color-azul-claro) 100%
-  );
+  background: transparent;
   height: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: transparent;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   /* Apartado del menu de navegación */
   & nav {
@@ -143,7 +143,6 @@ footer {
       line-height: 40px;
 
       & li {
-        text-transform: ;
       }
     }
 
@@ -172,15 +171,142 @@ footer {
   }
 }
 
+/* Apartado Central de la pagina */
 main {
   width: 100%;
 
+  background: url(../svg/canva-main.svg) no-repeat left 100%;
+
+  /* Apartado de Banner Principal */
+  & .banner__cabecera {
+    width: 100%;
+    padding: 80px 0;
+    background: linear-gradient(
+      180deg,
+      #042665 0%,
+      #30289b 52.6%,
+      #5c2acf 100%
+    );
+    display: flex;
+    justify-content: center;
+
+    & .main__banner {
+      max-width: var(--tam-anchoMax);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+
+      & .main__banner-texto {
+        color: var(--color-blanco);
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+        padding: 100px 0;
+        grid-column: 1/3;
+
+        & h1 {
+          font-size: 64px;
+        }
+
+        & p {
+          width: 500px;
+          overflow: hidden;
+        }
+
+        & ul {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          grid-column: 1/2;
+
+          & .main__banner-btn {
+            padding: 25px 60px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--color_azul_marino, #042665);
+            text-decoration: none;
+          }
+
+          & .main__banner-btn:last-child {
+            padding: 24px 90px;
+            border-radius: 100px;
+            background: transparent;
+            color: var(--color-lila);
+            border: 5px solid rgba(255, 255, 255, 0.49);
+          }
+        }
+      }
+    }
+    & .main__banner-img {
+      grid-column: 3/5;
+      align-self: flex-end;
+    }
+  }
+
+  /* Aparatdo de proceso  */
+  & .canva__procesos {
+    width: 100%;
+    height: 1031.253px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url(../svg/canva_banner.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    & .main__procesos {
+      & .main__procesos-pasos {
+        width: max(var(--tam-anchoMax));
+        height: 768px;
+
+        display: grid;
+        grid:
+          "Paso1 Paso2 Paso3 Paso4" 1fr
+          / 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        grid-auto-flow: row dense;
+
+        justify-content: center;
+        align-content: center;
+
+        /* Paso 1 */
+        .main__procesos-paso1 {
+          grid-area: Paso1;
+
+          & .linea {
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: var(--color-lila);
+            margin: 10px 0;
+          }
+        }
+
+        .main__procesos-paso2 {
+          grid-area: Paso2;
+        }
+      }
+      .main__procesos-paso3 {
+        grid-area: Paso3;
+      }
+      .main__procesos-paso4 {
+        grid-area: Paso4;
+      }
+    }
+  }
+
+  /* Apartado de las cartas de servicio */
   & .canva__main {
     width: 100%;
-    background: url(../svg/canva-main.svg);
+    /* background: url(../svg/canva-main.svg); */
+    background-position: left center;
+
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
+    padding: 100px 0;
 
     & .main__servicios {
       height: 700px;
@@ -190,8 +316,8 @@ main {
       padding: 0 20px;
 
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(2, auto);
 
       & articule {
         color: var(--color_azul_cielo, #1b287e);
@@ -201,12 +327,12 @@ main {
           font-size: 40px;
         }
       }
-
+      /* Cartas */
       & .main__servicios-diseño {
         width: 525px;
         height: 525px;
         background: var(--color-blanco);
-        box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
         opacity: 0.6;
         margin: 20px;
         grid-row: 2/3;
