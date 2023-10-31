@@ -175,12 +175,10 @@ footer {
 main {
   width: 100%;
 
-  background: url(../svg/canva-main.svg) no-repeat left 100%;
-
   /* Apartado de Banner Principal */
   & .banner__cabecera {
     width: 100%;
-    padding: 80px 0;
+    padding: 20px 0;
     background: linear-gradient(
       180deg,
       #042665 0%,
@@ -251,48 +249,73 @@ main {
     justify-content: center;
     align-items: center;
 
-    background: url(../svg/canva_banner.svg);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url(../svg/canva_banner.svg) no-repeat center;
 
     & .main__procesos {
+      color: var(--color-blanco);
+
       & .main__procesos-pasos {
         width: max(var(--tam-anchoMax));
         height: 768px;
-
         display: grid;
+        padding: 40px 0;
         grid:
           "Paso1 Paso2 Paso3 Paso4" 1fr
           / 1fr 1fr 1fr 1fr;
         gap: 10px;
         grid-auto-flow: row dense;
-
         justify-content: center;
         align-content: center;
 
-        /* Paso 1 */
-        .main__procesos-paso1 {
-          grid-area: Paso1;
+        /* Atributos dublicados */
+        & .main__procesos-paso1,
+        .main__procesos-paso2,
+        .main__procesos-paso3,
+        .main__procesos-paso4 {
+          position: relative;
+          color: var(--color-blanco);
 
           & .linea {
-            position: relative;
-            display: block;
-            width: 100px;
+            position: absolute;
+            right: 0;
+            top: 8%;
+            transform: translateY(-50%);
+            width: 250px;
             height: 5px;
             background-color: var(--color-lila);
-            margin: 10px 0;
+            margin-right: 20px;
+          }
+
+          & .proceso__contenido {
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            & h3{
+              line-height: 30px;
+            }
           }
         }
 
-        .main__procesos-paso2 {
+        /* Paso 1 */
+        & .main__procesos-paso1 {
+          grid-area: Paso1;
+        }
+
+        /* Paso 2 */
+        & .main__procesos-paso2 {
           grid-area: Paso2;
         }
-      }
-      .main__procesos-paso3 {
-        grid-area: Paso3;
-      }
-      .main__procesos-paso4 {
-        grid-area: Paso4;
+        /* Paso 3 */
+        & .main__procesos-paso3 {
+          grid-area: Paso3;
+        }
+
+        /* Paso 4 */
+        & .main__procesos-paso4 {
+          grid-area: Paso4;
+        }
       }
     }
   }
@@ -300,10 +323,7 @@ main {
   /* Apartado de las cartas de servicio */
   & .canva__main {
     width: 100%;
-    /* background: url(../svg/canva-main.svg); */
-    background-position: left center;
-
-    background-repeat: no-repeat;
+    background: url(../svg/canva-main.svg) no-repeat left center;
     display: flex;
     justify-content: center;
     padding: 100px 0;
